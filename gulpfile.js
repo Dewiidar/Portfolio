@@ -10,11 +10,18 @@ var jsSources = [
 
 var sassSources = ['components/sass/style.scss'];
 
+var htmlSources = ['builds/development/*.html']
+
 gulp.task('connect', function() {
   connect.server({
     root: 'builds/development/',
     livereload: true
   });
+});
+
+gulp.task('html', function() {
+  gulp.src(htmlSources)
+  .pipe(connect.reload())
 });
 
 gulp.task('js', function() {
@@ -39,6 +46,7 @@ gulp.task('compass', function() {
 gulp.task('watch', function() {
   gulp.watch(jsSources, ['js']);
   gulp.watch('components/sass/*.scss', ['compass']);
+  gulp.watch(htmlSources, ['html']);
 });
 
-gulp.task('default', ['js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['html', 'js', 'compass', 'connect', 'watch']);
