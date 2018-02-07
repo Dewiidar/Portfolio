@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     compass = require('gulp-compass'),
+    connect = require('gulp-connect'),
     concat = require('gulp-concat');
 
 var jsSources = [
@@ -9,14 +10,18 @@ var jsSources = [
 
 var sassSources = ['components/sass/style.scss'];
 
-gulp.task('log', function(){
-  gutil.log("Mohamed Dewidar's Portfolio")
+gulp.task('connect', function() {
+  connect.server({
+    root: 'builds/development/',
+    livereload: true
+  });
 });
 
 gulp.task('js', function() {
   gulp.src(jsSources)
     .pipe(concat('script.js'))
     .pipe(gulp.dest('builds/development/js'))
+    .pipe(connect.reload())
 });
 
 gulp.task('compass', function() {
@@ -28,6 +33,7 @@ gulp.task('compass', function() {
   }))
   .on('error', gutil.log)
   .pipe(gulp.dest('builds/development/css'))
+  .pipe(connect.reload())
 });
 
 gulp.task('watch', function() {
@@ -35,4 +41,4 @@ gulp.task('watch', function() {
   gulp.watch('components/sass/*.scss', ['compass']);
 });
 
-gulp.task('default', ['js', 'compass', 'watch']);
+gulp.task('default', ['js', 'compass', 'connect', 'watch']);
