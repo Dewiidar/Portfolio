@@ -1,0 +1,18 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Mohamed Dewidar's Portfolio - A Front End-Developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Mohamed Dewidar",
+  "license": "ISC"
+}
