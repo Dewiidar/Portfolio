@@ -1,3 +1,3 @@
-#Mohamed Dewidar's Portfolio - A Front-End Developer
+# Mohamed Dewidar's Portfolio - A Front-End Developer
 
-This project is an example of a single-page portfolio!
+This project includes the files of my online portfolio page!
