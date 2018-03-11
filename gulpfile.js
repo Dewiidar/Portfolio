@@ -2,7 +2,10 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     compass = require('gulp-compass'),
     connect = require('gulp-connect'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    browserify = require('browserify'),
+    babelify = require('babelify'),
+    source = require('vinyl-source-stream');
 
 var jsSources = [
   'components/scripts/template.js'
@@ -25,10 +28,12 @@ gulp.task('html', function() {
 });
 
 gulp.task('js', function() {
-  gulp.src(jsSources)
-    .pipe(concat('script.js'))
-    .pipe(gulp.dest('builds/development/js'))
-    .pipe(connect.reload())
+	browserify(jsSources)
+		.transform(babelify)
+		.bundle()
+		.pipe(source('script.js'))
+		.pipe(gulp.dest('builds/development/js'))
+		.pipe(connect.reload());
 });
 
 gulp.task('compass', function() {

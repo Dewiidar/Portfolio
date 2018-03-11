@@ -16,15 +16,18 @@
   "author": "Mohamed Dewidar",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.2.0",
     "gulp-util": "^3.0.8",
     "jquery": "^3.3.1",
     "mustache": "^2.3.0",
-    "uglify-js": "^3.3.9"
+    "uglify-js": "^3.3.9",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {}
 }

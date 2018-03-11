@@ -1,14 +1,33 @@
 //Style.scss
-//=================
+
+// imports
+@import "compass","reset","typography", "mixins", "header";
 
 
-//Compass imports
-@import "compass";
+html,body {
+height:100%;
+}
 
-//Core partials
-@import "variables";
-@import "mixins";
-@import "base";
-@import "modules";
+@mixin fullScreenSize {
+  min-height:100%;
+}
 
-//Add JS partials if there is any
+
+#section1 {
+  @include fullScreenSize;
+  background:yellow;   //testing
+}
+
+#section2 {
+  @include fullScreenSize;
+background:#00F;   //testing
+}
+
+#section3 {
+  @include fullScreenSize;
+background:#0F0;   //testing
+}
+
+h1, h2, h3 {
+  // background-color: grey;   //testing
+}

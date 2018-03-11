@@ -1,45 +1,14 @@
-body {
-  margin: 0px;
-  padding: 0px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0px;
-  padding: 0px;
-}
-
-ul, ol {
-  margin: 0px;
-  padding: 0px;
-}
-
-div, section, article, aside, header, footer {
-  margin: 0px;
-  padding: 0px;
-}
-
-@font-face {
-  font-family: 'arca_majora_3heavy';
-  src: url("fonts/arcamajora3-heavy-webfont.woff2") format("woff2"), url("fonts/arcamajora3-heavy-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-.header-text {
-  color: black;
-  font-size: 20px;
-  font-weight: 10px;
-  text-transform: capitalize;
-  font-family: 'arca_majora_3heavy','sans-serif';
-}
-
+// header styles
 .flex-Row {
   max-width: 1366px;
+  // background: grey; //testing
   font-family: arca_majora_3heavy;
   font-size: 20px;
   color: black;
 }
 
 #main-header {
+  // background-color: red; //testing
   padding: 1%;
 }
 
@@ -87,8 +56,10 @@ div, section, article, aside, header, footer {
   text-align: center;
   color: black;
 }
+// ============= Media Queries ===========
 
 @media only screen and (max-width: 888px) {
+
   .flex-Row {
     flex-wrap: wrap;
   }
@@ -101,19 +72,18 @@ div, section, article, aside, header, footer {
   }
 
   .menuItem {
-    display: none;
+    display: none; //turned off
     margin-top: 2%;
   }
 
   .menuList {
-    display: block;
-    margin: 0 auto;
-  }
-
+  display: block;
+  margin: 0 auto;
+ }
   .menuList li {
     min-width: 250px;
   }
-
+  // ============= Hamburger icon ===========
   .wrapper-menu {
     width: 35px;
     height: 35px;
@@ -158,17 +128,21 @@ div, section, article, aside, header, footer {
   .open .line-menu.end {
     transform: rotate(-90deg) translateX(-3px);
   }
+
 }
+
 @media only screen and (min-width: 888px) {
   .navbarIcon {
     display: none;
   }
 }
-@media only screen and (max-width: 888px) {
-  .flex-Row .menuItem.show {
+
+.flex-Row .menuItem.show {
+  @media only screen and (max-width: 888px) {
     display: block;
   }
 }
+
 
 .btn {
   background-color: Transparent;
@@ -176,12 +150,15 @@ div, section, article, aside, header, footer {
   margin-right: 10%;
   outline: none;
   overflow: hidden;
+
 }
 
+
+// =========================== Welcome Area Content ============================
 .welcome {
   display: flex;
   flex-flow: column;
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: rgba(#000000, 0.96); // testing
   align-content: center;
   min-height: 100vh;
   background-image: url("/images/1.jpeg");
@@ -190,7 +167,7 @@ div, section, article, aside, header, footer {
   background-size: cover;
 }
 
-.welcome-area-content {
+.welcome-area-content{
   flex: 11;
   display: flex;
   flex-flow: column;
@@ -199,8 +176,8 @@ div, section, article, aside, header, footer {
   margin-bottom: 5%;
 }
 
-.welcome-area-header {
-  flex: 1;
+.welcome-area-header{
+  flex:1;
 }
 
 .header-text {
@@ -210,23 +187,4 @@ div, section, article, aside, header, footer {
 .typewrite {
   font-size: 2vw;
   margin-top: -1%;
-}
-
-html, body {
-  height: 100%;
-}
-
-#section1 {
-  min-height: 100%;
-  background: yellow;
-}
-
-#section2 {
-  min-height: 100%;
-  background: #00F;
-}
-
-#section3 {
-  min-height: 100%;
-  background: #0F0;
 }

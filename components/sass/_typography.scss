@@ -1,0 +1,18 @@
+// FontAwesome
+
+@font-face {
+    font-family: 'arca_majora_3heavy';
+    src: url('fonts/arcamajora3-heavy-webfont.woff2') format('woff2'),
+         url('fonts/arcamajora3-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.header-text {
+    color: black;
+    font-size: 20px;
+    font-weight: 10px;
+    text-transform: capitalize;
+    font-family: 'arca_majora_3heavy','sans-serif';
+}
